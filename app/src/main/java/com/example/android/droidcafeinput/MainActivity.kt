@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val EXTRA_MESSAGE = "com.example.android.droidcafeinput.extra.MESSAGE"
     }
 
-    lateinit var mOrderMessage: String
+    var mOrderMessage: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +37,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.action_order) {
-            return true
+        when(item.itemId) {
+            R.id.action_order -> {
+                val intent = Intent(this, OrderActivity::class.java)
+                intent.putExtra(EXTRA_MESSAGE, mOrderMessage)
+                startActivity(intent)
+            }
+            R.id.action_status -> displayToast((getString(R.string.action_status_message)))
+            R.id.action_favorites -> displayToast(getString(R.string.action_favorites_message))
+            R.id.action_contact -> displayToast(getString(R.string.action_contact_message))
+            else -> {}
         }
         return super.onOptionsItemSelected(item)
     }

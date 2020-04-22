@@ -24,18 +24,21 @@
         android:title="@string/action_contact"
         app:showAsAction="never" />
     <item
+        android:icon="@drawable/ic_order"
         android:id="@+id/action_order"
         android:orderInCategory="10"
         android:title="@string/action_order"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
     <item
+        android:icon="@drawable/ic_status"
         android:id="@+id/action_status"
         android:orderInCategory="20"
         android:title="@string/action_status"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
     <item
+        android:icon="@drawable/ic_favorites"
         android:id="@+id/action_favorites"
         android:orderInCategory="30"
         android:title="@string/action_favorites"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
 </menu>
